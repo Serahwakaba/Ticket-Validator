@@ -7,13 +7,14 @@
     tools:context=".Login">
 
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:paddingLeft="120dp"-->
-<!--        android:paddingTop="50dp"-->
-<!--        tools:srcCompat="@tools:sample/avatars" />-->
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="130dp"
+        android:background="@drawable/logo"
+        />
 
     <EditText
         android:id="@+id/phone"
@@ -47,6 +48,7 @@
         android:layout_marginStart="47dp"
         android:layout_marginEnd="47dp"
         android:layout_marginBottom="-143dp"
+        android:backgroundTint="#000000"
         android:text="Login"
         android:textSize="20sp"
         app:cornerRadius="18dp" />
