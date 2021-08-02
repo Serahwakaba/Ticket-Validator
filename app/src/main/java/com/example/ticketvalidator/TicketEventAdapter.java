@@ -16,9 +16,9 @@ public class TicketEventAdapter extends RecyclerView.Adapter<TicketEventAdapter.
     private List<TicketEvent> list;
     LayoutInflater inflater;
 
-    public TicketEventAdapter(Context context, List<TicketEvent> list) {
-        this.context = context;
-        this.list = list;
+    public TicketEventAdapter(Context _context, List<TicketEvent> _list) {
+        this.context = _context;
+        this.list = _list;
         inflater = LayoutInflater.from(context);
     }
 

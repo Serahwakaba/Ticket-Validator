@@ -4,54 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".MainActivity">
 
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="202dp"
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/null"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="130dp"
-        android:background="@drawable/logo"
-        />
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="263dp"
+        android:layout_marginBottom="447dp"
+        android:paddingTop="30dp"
+        android:text="In Progress"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/phone"
+    <include
+        layout="@layout/list_item"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="80dp"
+        android:paddingBottom="30dp" />
+
+    <LinearLayout
+        android:layout_width="400dp"
         android:layout_height="63dp"
-        android:layout_marginTop="230dp"
-        android:hint="Phone Number"
-        android:inputType="textPersonName"
-        android:paddingLeft="50dp"
-        android:textSize="24sp" />
+        android:layout_above="@+id/scan"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="43dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_alignBottom="@+id/phone"
-        android:layout_marginBottom="-113dp"
-        android:ems="20"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingLeft="50dp"
-        android:textSize="24sp" />
+        <EditText
+            android:id="@+id/code"
+            android:layout_width="197dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-455dp"
+            android:hint="Enter ticket code"
+            android:inputType="textPersonName"
+            android:paddingRight="20dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="129dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="526dp"
+            android:text="Check"
+            app:cornerRadius="18dp" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="202dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="130dp"
+            android:background="@drawable/icon" />
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="317dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/password"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="-143dp"
-        android:backgroundTint="#000000"
-        android:text="Login"
-        android:textSize="20sp"
-        app:cornerRadius="25dp" />
+        android:id="@+id/scan"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignEnd="@+id/cardViewGraph"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-14dp"
+        android:layout_marginBottom="55dp"
+        android:backgroundTint="#0A29EF"
+        android:text="Scan ticket"
+        app:cornerRadius="18dp" />
 
 
 </RelativeLayout>
