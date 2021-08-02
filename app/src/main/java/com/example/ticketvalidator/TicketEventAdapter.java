@@ -8,38 +8,36 @@ import android.widget.TextView;
 import android.content.Context;
 import java.util.List;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyListAdapter  extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
+public class TicketEventAdapter extends RecyclerView.Adapter<TicketEventAdapter.ViewHolder>{
 
     private Context context;
-    private List<MyListData> list;
+    private List<TicketEvent> list;
+    LayoutInflater inflater;
 
-    public MyListAdapter(Context context, List<MyListData> list) {
+    public TicketEventAdapter(Context context, List<TicketEvent> list) {
         this.context = context;
         this.list = list;
+        inflater = LayoutInflater.from(context);
     }
 
 
-  @NonNull
+//    @NonNull
     @Override
-    public MyListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-            View v = LayoutInflater.from(context).inflate(R.layout.list_custom_item, parent, false);
-            return new RecyclerView.ViewHolder(v);
-        }
-
-
+    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+        ViewHolder holder = new ViewHolder(inflater.inflate(R.layout.list_custom_item, parent));
+        return  holder;
+    }
 
     @Override
-    public void onBindViewHolder(@NonNull MyListAdapter.ViewHolder holder, int position) {
-        MyListData myListData = list.get(position);
+    public void onBindViewHolder( ViewHolder holder, int position) {
+        TicketEvent ticketEvent = list.get(position);
 
-        holder.name.setText(myListData.getName());
-        holder.date.setText(myListData.getDate());
-        holder.number.setText(myListData.getTotal());
-        holder.ticket.setText(myListData.getTickets());
+        holder.name.setText(ticketEvent.getName());
+        holder.date.setText(ticketEvent.getDate());
+        holder.number.setText(ticketEvent.getTotal());
+        holder.ticket.setText(ticketEvent.getTickets());
 //        holder.image.setImageIcon(myListData.getId());
 
     }

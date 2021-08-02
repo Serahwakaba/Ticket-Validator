@@ -1,6 +1,6 @@
 package com.example.ticketvalidator;
 
-public class MyListData {
+public class TicketEvent {
     private String id;
     private String name;
     private String date;
@@ -8,12 +8,12 @@ public class MyListData {
     private String tickets;
 
 
-    public MyListData(){
+    public TicketEvent(){
 
     }
 
 
-    public MyListData(String id, String name, String date, String total, String tickets) {
+    public TicketEvent(String id, String name, String date, String total, String tickets) {
         this.id = id;
         this.name = name;
         this.date = date;
