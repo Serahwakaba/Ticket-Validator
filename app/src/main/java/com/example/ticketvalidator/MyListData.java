@@ -22,12 +22,6 @@ public class MyListData {
     }
 
 
-
-
-
-
-
-
     public String getId() {
         return id;
     }
