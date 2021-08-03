@@ -70,12 +70,14 @@
 
     <Button
         android:id="@+id/scan"
-        android:layout_width="392dp"
-        android:layout_height="64dp"
+        android:layout_width="264dp"
+        android:layout_height="61dp"
         android:layout_alignEnd="@+id/cardViewGraph"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="69dp"
         android:layout_marginEnd="-14dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="#0A29EF"
         android:text="Scan ticket"
         app:cornerRadius="18dp" />

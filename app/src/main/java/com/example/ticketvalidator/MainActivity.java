@@ -22,6 +22,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -33,7 +34,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private  String url = "http://35.187.164.231/ticket-bay-api/v1/api/event/view";
+    private String URLstring= "http://35.187.164.231/ticket-bay-api/v1/api/event/view";
     private RecyclerView mEvents;
     private LinearLayoutManager linearLayoutManager;
     private DividerItemDecoration dividerItemDecoration;
@@ -46,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
+//        progressDialog.setMessage("Loading...");
+//        progressDialog.show();
 
         //Declaring the variables
         mEvents = findViewById(R.id.main_list);
@@ -64,11 +65,10 @@ public class MainActivity extends AppCompatActivity {
         mEvents.setAdapter(adapter);
         JSONObject jsonObject = new JSONObject();
         getData(jsonObject);
-
     }
 
 
-        private void getData(JSONObject payload) {
+            private void getData(JSONObject payload) {
 
 
             JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(JSONObject response) {
 
+                    Log.d("st", ">>" + response);
+
+
                     try{
                         JSONObject data = response.getJSONObject("data");
 
@@ -85,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                         for (int i = 0; i < data.length(); i++) {
 
                               JSONArray datas = data.getJSONArray(("data"));
-                            Log.d("data", datas.toString());
+                            Log.d("datas", datas.toString());
 
 
                             for (int j = 0; j < datas.length(); i++) {
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                               }
 
                         }
-//                        adapter.notifyDataSetChanged();
+                        adapter.notifyDataSetChanged();
 
                     }
 
@@ -110,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                }
+}
             }, volleyError -> {
 //            progressDialog.dismiss();
                         NetworkResponse response = volleyError.networkResponse;
@@ -147,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             RetryPolicy policy = new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
             jsonObjReq.setRetryPolicy(policy);
             // Adding request to request queue
-            RequestSingletone.getInstance(getApplicationContext()).addToRequestQueue(jsonObjReq, "datas");
+            RequestSingletone.getInstance(getApplicationContext()).addToRequestQueue(jsonObjReq, "data");
         }
 }
 
