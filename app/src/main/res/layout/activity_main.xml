@@ -11,7 +11,6 @@
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/null"
         android:layout_alignParentEnd="true"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="263dp"
@@ -34,14 +33,14 @@
         android:layout_height="63dp"
         android:layout_above="@+id/scan"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="29dp"
         android:orientation="horizontal"
         android:paddingLeft="50dp">
 
         <EditText
             android:id="@+id/code"
-            android:layout_width="197dp"
+            android:layout_width="212dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="-455dp"
             android:hint="Enter ticket code"
@@ -54,6 +53,8 @@
             android:layout_height="56dp"
             android:layout_marginEnd="130dp"
             android:layout_marginBottom="526dp"
+            android:backgroundTint="#F5039BE5"
+
             android:text="Check"
             app:cornerRadius="18dp" />
 
@@ -69,12 +70,12 @@
 
     <Button
         android:id="@+id/scan"
-        android:layout_width="match_parent"
+        android:layout_width="392dp"
         android:layout_height="64dp"
         android:layout_alignEnd="@+id/cardViewGraph"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-14dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="11dp"
         android:backgroundTint="#0A29EF"
         android:text="Scan ticket"
         app:cornerRadius="18dp" />
